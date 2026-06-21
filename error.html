@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ошибка | Инженерная Академия</title>
+
+  <!-- Tailwind + Alpine (для единообразия) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+  <style>
+    /* ---------- ЛОКАЛЬНЫЕ ШРИФТЫ (такие же как в основном сайте) ---------- */
+    @font-face {
+      font-family: 'ST-KOSMOLET';
+      src: url('fonts/st-kosmolet-futurism.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'ST-KOSMOLET';
+      src: url('fonts/st-kosmolet-futurism.ttf') format('truetype');
+      font-weight: bold;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'PT Serif';
+      src: url('fonts/ofont.ru_PT Serif.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg-body: #F4ECE1;
+      --text-primary: #0B0C10;
+      --text-secondary: #2C2F33;
+      --accent: #C1272D;
+      --card-bg: rgba(255, 255, 255, 0.6);
+      --header-bg: #0B0C10;
+      --border-accent: #C1272D;
+      --btn-primary-bg: #C1272D;
+      --btn-primary-text: #FFFFFF;
+      --btn-primary-hover: #A01E23;
+      --btn-dark-bg: #0B0C10;
+      --btn-dark-text: #F4ECE1;
+      --btn-dark-hover: #2C2F33;
+      --footer-bg: #0B0C10;
+      --plakat-stripe: repeating-linear-gradient(45deg, rgba(193,39,45,0.08) 0px, rgba(193,39,45,0.08) 20px, transparent 20px, transparent 40px);
+    }
+
+    body {
+      font-family: 'PT Serif', 'Times New Roman', serif;
+      background-color: var(--bg-body);
+      color: var(--text-primary);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    /* Фоновые диагональные линии */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: var(--plakat-stripe);
+      pointer-events: none;
+      z-index: -1;
+      opacity: 0.8;
+    }
+
+    /* Фоновое изображение (слабо) */
+    body::after {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0%;
+      width: 100%;
+      height: 100%;
+      z-index: -2;
+      background-image: url('images/pokoriteli.jpg');
+      background-size: cover;
+      background-position: 50% -8%;
+      background-repeat: no-repeat;
+      opacity: 0.3;
+      mix-blend-mode: multiply;
+    }
+
+    .futuristic-title, h1, h2, h3 {
+      font-family: 'ST-KOSMOLET', monospace;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    .plakat-card {
+      border: 3px solid var(--border-accent);
+      background-color: var(--card-bg);
+      box-shadow: 6px 6px 0 rgba(0,0,0,0.1);
+    }
+
+    .btn-red {
+      background-color: var(--btn-primary-bg);
+      color: var(--btn-primary-text);
+      border: none;
+      transition: background-color 0.2s;
+      font-weight: bold;
+    }
+    .btn-red:hover {
+      background-color: var(--btn-primary-hover);
+    }
+
+    .slogan-stripe {
+      background-color: var(--accent);
+      color: white;
+      padding: 0.5rem 1rem;
+      display: inline-block;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    .afisha-repeat {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      font-family: monospace;
+      opacity: 0.8;
+      line-height: 1.2;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ШУМ (текстура) -->
+  <div style="position:fixed; top:0; left:0; width:100%; height:100%; pointer-events:none; z-index:999; opacity:0.4; background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJmIj48ZmVUdXJidWxlbmNlIHR5cGU9ImZyYWN0YWxOb2lzZSIgYmFzZUZyZXF1ZW5jeT0iLjciIG51bU9jdGF2ZXM9IjMiLz48L2ZpbHRlcj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWx0ZXI9InVybCgjZikiIG9wYWNpdHk9IjAuNSIvPjwvc3ZnPg=='); background-repeat: repeat;"></div>
+
+  <!-- ХЕДЕР (как на основном сайте, но без ссылок) -->
+  <header style="background-color: var(--header-bg); border-bottom: 4px solid var(--border-accent);" class="sticky top-0 z-50 shadow-xl">
+    <div class="container mx-auto px-5 py-4 flex flex-wrap justify-between items-center gap-4">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 flex items-center justify-center" style="background-color: var(--border-accent);">
+          <span class="text-white font-black text-xl futuristic-title">⚡</span>
+        </div>
+        <div>
+          <h1 class="text-2xl md:text-3xl font-black futuristic-title tracking-tighter text-white">ИНЖЕНЕРНАЯ АКАДЕМИЯ</h1>
+          <span class="text-xs" style="color: var(--border-accent);">ДПО • УДАРНАЯ ПОДГОТОВКА • ТЕХНИКА</span>
+        </div>
+      </div>
+      <!-- Меню неактивно, но для стиля оставим заглушку -->
+      <nav class="flex gap-6 text-sm font-bold futuristic-title text-white/50">
+        <span>КУРСЫ</span>
+        <span>МЕДИАТЕКА</span>
+        <span>МАГАЗИН</span>
+      </nav>
+    </div>
+  </header>
+
+  <main class="flex-grow flex items-center justify-center px-5 py-12">
+    <div class="container mx-auto max-w-3xl">
+      <div class="plakat-card p-8 md:p-12 text-center">
+        <!-- Лозунг-полоса -->
+        <div class="slogan-stripe mb-6">ВНИМАНИЕ! ОШИБКА</div>
+
+        <!-- Крупный номер ошибки -->
+        <h2 class="futuristic-title text-7xl md:text-9xl font-black leading-none tracking-tighter" style="color: var(--accent);">
+          404
+        </h2>
+
+        <!-- Текст -->
+        <p class="text-2xl md:text-3xl futuristic-title font-bold mt-4">СТРАНИЦА НЕ НАЙДЕНА</p>
+        <p class="text-lg mt-4 max-w-lg mx-auto" style="color: var(--text-secondary);">
+          Возможно, вы ошиблись адресом или страница была перемещена.
+          Вернитесь на главную и продолжите работу.
+        </p>
+
+        <!-- Кнопка возврата -->
+        <div class="mt-8">
+          <a href="/" class="btn-red futuristic-title font-bold px-8 py-4 text-lg inline-block rounded-none shadow-md transition">
+            ← НА ГЛАВНУЮ
+          </a>
+        </div>
+
+        <!-- Афишный повторяющийся текст (для антуража) -->
+        <div class="afisha-repeat mt-10 pt-4 border-t border-red-800/30">
+          <span>ВИСТАВКА РАБОТ НАОММАРА МАКОВСКОГО — ЗВЁЗДНАЯ 18 — ТРАВЕНЬ 3,4,10,18,24,34,36,А — ТЕЛ.3-90, ДОБ.18</span>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ФУТЕР (краткий) -->
+  <footer style="background-color: var(--footer-bg); border-top: 4px solid var(--border-accent);" class="text-gray-400 py-6">
+    <div class="container mx-auto px-5 text-center text-xs futuristic-title">
+      ДИЗАЙН ВДОХНОВЛЁН СОВЕТСКИМ ПЛАКАТОМ 1920–1930-Х ГОДОВ
+    </div>
+  </footer>
+
+  <!-- Font Awesome (для иконок, если понадобятся) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</body>
+</html>
