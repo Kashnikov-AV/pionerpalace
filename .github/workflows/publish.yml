@@ -1,18 +1,19 @@
-name: Deploy to GitHub Pages
+name: Pelican Deploy
 
 on:
   push:
-    branches: ["master"]      # ← было "main", стало "master"
+    branches: ["master"]
   workflow_dispatch:
+
+# Ограничиваем один параллельный деплой
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
 
 permissions:
   contents: read
   pages: write
   id-token: write
-
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
 
 jobs:
   deploy:
