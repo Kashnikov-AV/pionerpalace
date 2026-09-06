@@ -3,7 +3,7 @@ SITENAME = 'Дворец пионеров'
 SITEURL = ""
 
 PATH = "content"
-STATIC_PATHS = ['static']
+STATIC_PATHS = ['static/css', 'static/fonts', 'static/images', 'static/gallery']
 THEME = 'themes/palace'
 
 
