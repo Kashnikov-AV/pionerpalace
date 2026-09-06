@@ -44,3 +44,7 @@ ARTICLE_LANG_SAVE_AS = 'courses/{slug}.html'
 
 # Указываем шаблон для статей (курсов)
 ARTICLE_TEMPLATE = 'course.html'
+
+# pelicanconf.py
+PAGE_SAVE_AS = '{slug}.html'
+PAGE_URL = '{slug}.html'
