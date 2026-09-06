@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Дворец пионеров - Articles by Pioner palace</title>
+
+  <!-- Tailwind + Alpine (для обратной совместимости) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+  <!-- Основной CSS -->
+  <link rel="stylesheet" href="https://pionerpalace.ru/css/styles.css">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<body>
+
+  <!-- Шумовая текстура -->
+  <div class="page__noise"></div>
+
+  <!-- ========== HEADER ========== -->
+<header class="header">
+  <div class="container header__inner">
+    <div class="header__brand">
+      <div class="header__icon">⚡</div>
+      <div>
+        <h1 class="header__title">Дворец пионеров</h1>
+        <span class="header__subtitle">ДПО • УДАРНАЯ ПОДГОТОВКА • ТЕХНИКА</span>
+      </div>
+    </div>
+
+    <nav class="header__nav">
+      <a href="https://pionerpalace.ru/courses.html" class="header__link">КУРСЫ</a>
+      <a href="#media" class="header__link">МЕДИАТЕКА</a>
+      <a href="#shop" class="header__link">МАГАЗИН</a>
+    </nav>
+
+    <div class="header__actions">
+      <a href="#contact" class="button button--primary">ЗАПИСАТЬСЯ</a>
+    </div>
+  </div>
+</header>
+  <!-- ========== MAIN ========== -->
+  <main>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="container">
+    <div class="hero__card">
+      <div class="hero__slogan">Прорыв в будущее</div>
+      <h2 class="hero__title">стань инженером будущего</h2>
+      <p class="hero__description">Официальное ДПОММ. Диплом государственного образца. Проекты под руководством практиков.</p>
+      <div class="hero__actions">
+        <a href="https://pionerpalace.ru/courses.html" class="button button--primary button--large">выбрать курс</a>
+        <a href="#contact" class="button button--dark button--large">консультация</a>
+      </div>
+      <div class="hero__footer">
+        <span>ВИСТАВКА РАБОТ НАОММАРА МАКОВСКОГО — ЗВЁЗДНАЯ 18 — ТРАВЕНЬ 3,4,10,18,24,34,36,А — ТЕЛ.3-90, ДОБ.18</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== COURSES ===== -->
+<section id="courses" class="courses" x-data="{ activeTab: 'children' }">
+  <div class="container">
+    <div class="courses__card">
+      <div class="courses__header">
+        <h2 class="courses__title">УЧЕБНЫЙ ПЛАН</h2>
+        <div class="courses__tabs">
+          <button 
+            @click="activeTab = 'children'" 
+            :class="activeTab === 'children' ? 'courses__tab courses__tab--active' : 'courses__tab'"
+          >ДЕТИ 7–17</button>
+          <button 
+            @click="activeTab = 'adults'" 
+            :class="activeTab === 'adults' ? 'courses__tab courses__tab--active' : 'courses__tab'"
+          >ВЗРОСЛЫЕ / ДПО</button>
+        </div>
+      </div>
+
+      <!-- Детские курсы (первые 3) -->
+      <div x-show="activeTab === 'children'" x-transition.duration.200ms>
+        <div class="courses__grid">
+              <a href="https://pionerpalace.ru/courses/deti-animation.html" class="course-card-link block transition-transform hover:scale-105">
+                <div class="course-card p-5 border-2 border-black/20" style="background-color: var(--card-bg);">
+                  <div class="course-card__icon w-14 h-14 flex items-center justify-center mb-3 border-2 border-red-700">
+                    <i class="fas fa- text-3xl text-red-700"></i>
+                  </div>
+                  <h3 class="course-card__title text-2xl font-black futuristic-title">Создание мультфильмов и 2D-анимация</h3>
+                  <p class="course-card__description text-sm"></p>
+                  <div class="course-card__meta flex justify-between mt-2 text-sm">
+                    <span>Объём: 36 ак.ч</span>
+                    <span>Возраст: 8–12 лет</span>
+                  </div>
+                  <div class="course-card__price text-2xl font-black text-red-700 mt-2">Цена: 20 000 ₽</div>
+                </div>
+              </a>
+              <a href="https://pionerpalace.ru/courses/deti-arduino.html" class="course-card-link block transition-transform hover:scale-105">
+                <div class="course-card p-5 border-2 border-black/20" style="background-color: var(--card-bg);">
+                  <div class="course-card__icon w-14 h-14 flex items-center justify-center mb-3 border-2 border-red-700">
+                    <i class="fas fa- text-3xl text-red-700"></i>
+                  </div>
+                  <h3 class="course-card__title text-2xl font-black futuristic-title">Робототехника на Arduino</h3>
+                  <p class="course-card__description text-sm"></p>
+                  <div class="course-card__meta flex justify-between mt-2 text-sm">
+                    <span>Объём: 48 ак.ч</span>
+                    <span>Возраст: 9–13 лет</span>
+                  </div>
+                  <div class="course-card__price text-2xl font-black text-red-700 mt-2">Цена: 32 000 ₽</div>
+                </div>
+              </a>
+              <a href="https://pionerpalace.ru/courses/deti-blender.html" class="course-card-link block transition-transform hover:scale-105">
+                <div class="course-card p-5 border-2 border-black/20" style="background-color: var(--card-bg);">
+                  <div class="course-card__icon w-14 h-14 flex items-center justify-center mb-3 border-2 border-red-700">
+                    <i class="fas fa- text-3xl text-red-700"></i>
+                  </div>
+                  <h3 class="course-card__title text-2xl font-black futuristic-title">ИНЖЕНЕРНАЯ АКАДЕМИЯ</h3>
+                  <p class="course-card__description text-sm"></p>
+                  <div class="course-card__meta flex justify-between mt-2 text-sm">
+                    <span>Объём: 40 ак.ч</span>
+                    <span>Возраст: 10–16 лет</span>
+                  </div>
+                  <div class="course-card__price text-2xl font-black text-red-700 mt-2">Цена: 24 000 ₽</div>
+                </div>
+              </a>
+        </div>
+      </div>
+
+      <!-- Взрослые курсы (первые 3) -->
+      <div x-show="activeTab === 'adults'" x-transition.duration.200ms>
+        <div class="courses__grid">
+              <a href="https://pionerpalace.ru/courses/vzr-ai.html" class="course-card-link block transition-transform hover:scale-105">
+                <div class="course-card p-5 border-2 border-black/20" style="background-color: var(--card-bg);">
+                  <div class="course-card__icon w-14 h-14 flex items-center justify-center mb-3 border-2 border-red-700">
+                    <i class="fas fa- text-3xl text-red-700"></i>
+                  </div>
+                  <h3 class="course-card__title text-2xl font-black futuristic-title">AI-грамотность и практическое применение</h3>
+                  <p class="course-card__description text-sm"></p>
+                  <div class="course-card__meta flex justify-between mt-2 text-sm">
+                    <span>Объём: 24 ак.ч</span>
+                  </div>
+                  <div class="course-card__price text-2xl font-black text-red-700 mt-2">Цена: 15 000 ₽</div>
+                </div>
+              </a>
+              <a href="https://pionerpalace.ru/courses/vzr-algorithms.html" class="course-card-link block transition-transform hover:scale-105">
+                <div class="course-card p-5 border-2 border-black/20" style="background-color: var(--card-bg);">
+                  <div class="course-card__icon w-14 h-14 flex items-center justify-center mb-3 border-2 border-red-700">
+                    <i class="fas fa- text-3xl text-red-700"></i>
+                  </div>
+                  <h3 class="course-card__title text-2xl font-black futuristic-title">ИНЖЕНЕРНАЯ АКАДЕМИЯ</h3>
+                  <p class="course-card__description text-sm"></p>
+                  <div class="course-card__meta flex justify-between mt-2 text-sm">
+                    <span>Объём: 80 ак.ч</span>
+                  </div>
+                  <div class="course-card__price text-2xl font-black text-red-700 mt-2">Цена: 45 000 ₽</div>
+                </div>
+              </a>
+              <a href="https://pionerpalace.ru/courses/vzr-blender-3d.html" class="course-card-link block transition-transform hover:scale-105">
+                <div class="course-card p-5 border-2 border-black/20" style="background-color: var(--card-bg);">
+                  <div class="course-card__icon w-14 h-14 flex items-center justify-center mb-3 border-2 border-red-700">
+                    <i class="fas fa- text-3xl text-red-700"></i>
+                  </div>
+                  <h3 class="course-card__title text-2xl font-black futuristic-title">3D-моделирование в Blender + 3D-печать</h3>
+                  <p class="course-card__description text-sm"></p>
+                  <div class="course-card__meta flex justify-between mt-2 text-sm">
+                    <span>Объём: 60 ак.ч</span>
+                  </div>
+                  <div class="course-card__price text-2xl font-black text-red-700 mt-2">Цена: 35 000 ₽</div>
+                </div>
+              </a>
+        </div>
+      </div>
+
+      <!-- Кнопка "Все курсы" -->
+      <div class="mt-8 text-center">
+        <a href="https://pionerpalace.ru/courses.html" class="button button--primary button--large">
+          СМОТРЕТЬ ВСЕ КУРСЫ →
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== MEDIA ===== -->
+<section id="media" class="media">
+  <div class="container">
+    <div class="media__card">
+      <h2 class="media__title">МЕДИАТЕКА</h2>
+
+      <!-- Галерея 3 колонки -->
+      <div class="media__grid media__grid--3">
+        <div class="media__item">
+          <img src="https://pionerpalace.ru/gallery/oborona.png" alt="Оборона Петрограда" class="media__item-image">
+          <div class="media__item-body">
+            <p class="media__item-title">А. ДЕЙНЕКА «ОБОРОНА ПЕТРОГРАДА»</p>
+            <p>1928</p>
+          </div>
+        </div>
+        <div class="media__item">
+          <img src="https://pionerpalace.ru/gallery/beg.jpg" alt="Бег" class="media__item-image">
+          <div class="media__item-body">
+            <p class="media__item-title">А. ДЕЙНЕКА «БЕГ»</p>
+            <p>1934</p>
+          </div>
+        </div>
+        <div class="media__item">
+          <img src="https://pionerpalace.ru/gallery/polden.png" alt="Выход в космос" class="media__item-image">
+          <div class="media__item-body">
+            <p class="media__item-title">СОКОЛОВ, ЛЕОНОВ «ВЫХОД В КОСМОС»</p>
+            <p>1965</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Блог 2 колонки -->
+      <div class="media__grid media__grid--2">
+        <div class="media__item">
+          <div class="media__item-body">
+            <div class="media__item-date">12.03.2026</div>
+            <h3 class="media__item-title" style="font-size: 1.5rem;">КАК СОБРАТЬ РОБОТА ЗА ВЫХОДНЫЕ</h3>
+            <p>Пошаговое руководство с Arduino.</p>
+            <a href="#" class="media__item-link">ЧИТАТЬ →</a>
+          </div>
+        </div>
+        <div class="media__item">
+          <div class="media__item-body">
+            <div class="media__item-date">05.03.2026</div>
+            <h3 class="media__item-title" style="font-size: 1.5rem;">ФУТУРИЗМ В ОБРАЗОВАНИИ: ОТ ДЕЙНЕКИ ДО НАШИХ ДНЕЙ</h3>
+            <p>Визуальные приёмы для инженерного мышления.</p>
+            <a href="#" class="media__item-link">ЧИТАТЬ →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Архив -->
+      <div class="media__archive">
+        <div style="display: flex; align-items: center; gap: 1rem;">
+          <i class="fas fa-book-open media__archive-icon"></i>
+          <div>
+            <h3 class="media__archive-title">ЖУРНАЛ «ЮНЫЙ ТЕХНИК»</h3>
+            <p class="media__archive-desc">Архив легендарного советского журнала</p>
+          </div>
+        </div>
+        <a href="https://archive.org/details/young_technician" target="_blank" class="button button--primary">ПЕРЕЙТИ К АРХИВУ</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SHOP ===== -->
+<section id="shop" class="shop">
+  <div class="container">
+    <div class="shop__card">
+      <h2 class="shop__title">МАГАЗИН</h2>
+      <div class="shop__grid">
+        <div class="product-card">
+          <i class="fas fa-tshirt product-card__icon"></i>
+          <h3 class="product-card__title">ФУТБОЛКА «РАКЕТА»</h3>
+          <div class="product-card__price">1 490 ₽</div>
+          <button class="button button--dark button--block">В КОРЗИНУ</button>
+        </div>
+        <div class="product-card">
+          <i class="fas fa-mug-hot product-card__icon"></i>
+          <h3 class="product-card__title">КРУЖКА «ИНЖЕНЕР»</h3>
+          <div class="product-card__price">790 ₽</div>
+          <button class="button button--dark button--block">В КОРЗИНУ</button>
+        </div>
+        <div class="product-card">
+          <i class="fas fa-microchip product-card__icon"></i>
+          <h3 class="product-card__title">НАБОР «РАДИОПРИЕМНИК»</h3>
+          <div class="product-card__price">2 990 ₽</div>
+          <button class="button button--dark button--block">В КОРЗИНУ</button>
+        </div>
+        <div class="product-card">
+          <i class="fas fa-solar-panel product-card__icon"></i>
+          <h3 class="product-card__title">КОНСТРУКТОР «СОЛНЕЧНАЯ БАТАРЕЯ»</h3>
+          <div class="product-card__price">3 490 ₽</div>
+          <button class="button button--dark button--block">В КОРЗИНУ</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section id="contact" class="contact">
+  <div class="container">
+    <div class="contact__inner">
+      <h2 class="contact__title">ЗАПИСЬ НА КУРС</h2>
+      <form netlify class="contact__form">
+        <input type="text" placeholder="ФАМИЛИЯ, ИМЯ" class="contact__input" required>
+        <input type="tel" placeholder="ТЕЛЕФОН" class="contact__input" required>
+        <input type="email" placeholder="EMAIL" class="contact__input" required>
+        <button type="submit" class="button button--primary button--large button--block">ОТПРАВИТЬ ЗАЯВКУ</button>
+      </form>
+      <div class="contact__footer-text">
+        * ВИСТАВКА РАБОТ НАОММАРА МАКОВСКОГО — ЗВЁЗДНАЯ 18 — ТРАВЕНЬ 3,4,10,18,24,34,36,А
+      </div>
+    </div>
+  </div>
+</section>
+
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__inner">
+      <div>
+        <h3 class="footer__title">Дворец пионеров</h3>
+        <p class="footer__text">Лицензия ДПО №Л035-01298-78/00123456</p>
+      </div>
+      <div>
+        <h3 class="footer__title">КОНТАКТЫ</h3>
+        <p class="footer__text">+7 (812) 123-45-67<br>@pionerpalace</p>
+      </div>
+      <div>
+        <h3 class="footer__title">ПАРТНЕРЫ</h3>
+        <p class="footer__text">Российское общество «Знание»<br>Союз юных инженеров</p>
+      </div>
+    </div>
+    <div class="footer__bottom">ДИЗАЙН ВДОХНОВЛЁН СОВЕТСКИМ ПЛАКАТОМ 1920–1930-Х ГОДОВ</div>
+  </div>
+</footer>
+</body>
+</html>
