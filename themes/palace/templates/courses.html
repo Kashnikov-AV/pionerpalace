@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block title %}Все курсы | {{ SITENAME }}{% endblock %}
+
+{% block content %}
+
+<section class="courses-page">
+  <div class="container">
+    <!-- Плакатный заголовок -->
+    <div class="plakat-card p-8 mb-12" style="background-color: rgba(255,255,255,0.6);">
+      <h1 class="futuristic-title text-5xl md:text-7xl font-black" style="color: var(--text-primary);">ВСЕ КУРСЫ</h1>
+      <p class="text-lg mt-2" style="color: var(--text-secondary);">Выберите направление и начните обучение уже сегодня</p>
+    </div>
+
+    <!-- ===== ДЕТСКИЕ КУРСЫ ===== -->
+    <div class="courses-page__section mb-16">
+      <h2 class="futuristic-title text-4xl md:text-5xl font-black mb-8" style="border-left: 8px solid var(--accent); padding-left: 1.25rem;">
+        ДЛЯ ДЕТЕЙ (7–17 лет)
+      </h2>
+      <div class="courses-page__grid grid grid-cols-1 md:grid-cols-3 gap-6">
+        {% for article in articles if article.category == 'children' %}
+          <a href="{{ SITEURL }}/{{ article.url }}" class="course-card-link block transition-transform hover:scale-105">
+            <div class="course-card p-5 border-2 border-black/20" style="background-color: var(--card-bg);">
+              <div class="course-card__icon w-14 h-14 flex items-center justify-center mb-3 border-2 border-red-700">
+                <i class="fas fa-{{ article.icon }} text-3xl text-red-700"></i>
+              </div>
+              <h3 class="course-card__title text-2xl font-black futuristic-title">{{ article.title }}</h3>
+              <p class="course-card__description text-sm">{{ article.short_description }}</p>
+              <div class="course-card__meta flex justify-between mt-2 text-sm">
+                <span>{{ article.hours }}</span>
+                <span>{{ article.age }}</span>
+              </div>
+              <div class="course-card__price text-2xl font-black text-red-700 mt-2">{{ article.price }}</div>
+            </div>
+          </a>
+        {% endfor %}
+      </div>
+    </div>
+
+    <!-- ===== ВЗРОСЛЫЕ КУРСЫ ===== -->
+    <div class="courses-page__section">
+      <h2 class="futuristic-title text-4xl md:text-5xl font-black mb-8" style="border-left: 8px solid var(--accent); padding-left: 1.25rem;">
+        ДЛЯ ВЗРОСЛЫХ (ДПО)
+      </h2>
+      <div class="courses-page__grid grid grid-cols-1 md:grid-cols-3 gap-6">
+        {% for article in articles if article.category == 'adults' %}
+          <a href="{{ SITEURL }}/{{ article.url }}" class="course-card-link block transition-transform hover:scale-105">
+            <div class="course-card p-5 border-2 border-black/20" style="background-color: var(--card-bg);">
+              <div class="course-card__icon w-14 h-14 flex items-center justify-center mb-3 border-2 border-red-700">
+                <i class="fas fa-{{ article.icon }} text-3xl text-red-700"></i>
+              </div>
+              <h3 class="course-card__title text-2xl font-black futuristic-title">{{ article.title }}</h3>
+              <p class="course-card__description text-sm">{{ article.short_description }}</p>
+              <div class="course-card__meta flex justify-between mt-2 text-sm">
+                <span>{{ article.hours }}</span>
+              </div>
+              <div class="course-card__price text-2xl font-black text-red-700 mt-2">{{ article.price }}</div>
+            </div>
+          </a>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

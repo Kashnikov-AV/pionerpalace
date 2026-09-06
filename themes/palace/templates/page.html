@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}{{ page.title }} | {{ SITENAME }}{% endblock %}
+
+{% block content %}
+
+<section class="page-detail py-16">
+  <div class="container">
+    <div class="plakat-card p-8 md:p-10">
+      <h1 class="futuristic-title text-4xl md:text-6xl font-black" style="color: var(--text-primary);">{{ page.title }}</h1>
+      <div class="mt-8 prose max-w-none" style="color: var(--text-secondary);">
+        {{ page.content }}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

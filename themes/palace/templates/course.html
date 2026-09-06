@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}{{ article.title }} | {{ SITENAME }}{% endblock %}
+
+{% block content %}
+
+<section class="course-detail py-16">
+  <div class="container">
+    <div class="plakat-card p-8 md:p-10">
+      <!-- Хлебные крошки -->
+      <nav class="text-sm mb-6" style="color: var(--text-secondary);">
+        <a href="{{ SITEURL }}/" class="hover:underline">Главная</a> &raquo;
+        <a href="{{ SITEURL }}/courses.html" class="hover:underline">Курсы</a> &raquo;
+        <span class="font-bold" style="color: var(--text-primary);">{{ article.title }}</span>
+      </nav>
+
+      <h1 class="futuristic-title text-4xl md:text-6xl font-black" style="color: var(--text-primary);">{{ article.title }}</h1>
+
+      <div class="flex flex-wrap gap-4 mt-4 text-sm">
+        {% if article.age %}
+          <span class="px-3 py-1" style="background: var(--accent); color: white;">Возраст: {{ article.age }}</span>
+        {% else %}
+          <span class="px-3 py-1" style="background: var(--accent); color: white;">Уровень: {{ article.level|default('Продвинутый') }}</span>
+        {% endif %}
+        <span class="px-3 py-1" style="background: var(--dark); color: var(--paper);">Объём: {{ article.hours }}</span>
+        <span class="px-3 py-1" style="background: var(--dark); color: var(--paper);">Цена: {{ article.price }}</span>
+      </div>
+
+      <div class="mt-8 prose max-w-none" style="color: var(--text-secondary);">
+        {{ article.content }}
+      </div>
+
+      <div class="mt-8 flex flex-wrap gap-4">
+        <a href="#contact" class="button button--primary button--large">Записаться на курс</a>
+        <a href="{{ SITEURL }}/courses.html" class="button button--dark button--large">← Все курсы</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

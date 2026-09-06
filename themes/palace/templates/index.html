@@ -1,0 +1,220 @@
+{% extends "base.html" %}
+
+{% block title %}Главная | {{ SITENAME }}{% endblock %}
+
+{% block content %}
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="container">
+    <div class="hero__card">
+      <div class="hero__slogan">Прорыв в будущее</div>
+      <h2 class="hero__title">стань инженером будущего</h2>
+      <p class="hero__description">Официальное ДПОММ. Диплом государственного образца. Проекты под руководством практиков.</p>
+      <div class="hero__actions">
+        <a href="{{ SITEURL }}/courses.html" class="button button--primary button--large">выбрать курс</a>
+        <a href="#contact" class="button button--dark button--large">консультация</a>
+      </div>
+      <div class="hero__footer">
+        <span>ВИСТАВКА РАБОТ НАОММАРА МАКОВСКОГО — ЗВЁЗДНАЯ 18 — ТРАВЕНЬ 3,4,10,18,24,34,36,А — ТЕЛ.3-90, ДОБ.18</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== COURSES ===== -->
+<section id="courses" class="courses" x-data="{ activeTab: 'children' }">
+  <div class="container">
+    <div class="courses__card">
+      <div class="courses__header">
+        <h2 class="courses__title">УЧЕБНЫЙ ПЛАН</h2>
+        <div class="courses__tabs">
+          <button 
+            @click="activeTab = 'children'" 
+            :class="activeTab === 'children' ? 'courses__tab courses__tab--active' : 'courses__tab'"
+          >ДЕТИ 7–17</button>
+          <button 
+            @click="activeTab = 'adults'" 
+            :class="activeTab === 'adults' ? 'courses__tab courses__tab--active' : 'courses__tab'"
+          >ВЗРОСЛЫЕ / ДПО</button>
+        </div>
+      </div>
+
+      <!-- Детские курсы (первые 3) -->
+      <div x-show="activeTab === 'children'" x-transition.duration.200ms>
+        <div class="courses__grid">
+          {% for article in articles if article.category == 'children' %}
+            {% if loop.index <= 3 %}
+              <a href="{{ SITEURL }}/{{ article.url }}" class="course-card-link block transition-transform hover:scale-105">
+                <div class="course-card p-5 border-2 border-black/20" style="background-color: var(--card-bg);">
+                  <div class="course-card__icon w-14 h-14 flex items-center justify-center mb-3 border-2 border-red-700">
+                    <i class="fas fa-{{ article.icon }} text-3xl text-red-700"></i>
+                  </div>
+                  <h3 class="course-card__title text-2xl font-black futuristic-title">{{ article.title }}</h3>
+                  <p class="course-card__description text-sm">{{ article.short_description }}</p>
+                  <div class="course-card__meta flex justify-between mt-2 text-sm">
+                    <span>{{ article.hours }}</span>
+                    <span>{{ article.age }}</span>
+                  </div>
+                  <div class="course-card__price text-2xl font-black text-red-700 mt-2">{{ article.price }}</div>
+                </div>
+              </a>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+
+      <!-- Взрослые курсы (первые 3) -->
+      <div x-show="activeTab === 'adults'" x-transition.duration.200ms>
+        <div class="courses__grid">
+          {% for article in articles if article.category == 'adults' %}
+            {% if loop.index <= 3 %}
+              <a href="{{ SITEURL }}/{{ article.url }}" class="course-card-link block transition-transform hover:scale-105">
+                <div class="course-card p-5 border-2 border-black/20" style="background-color: var(--card-bg);">
+                  <div class="course-card__icon w-14 h-14 flex items-center justify-center mb-3 border-2 border-red-700">
+                    <i class="fas fa-{{ article.icon }} text-3xl text-red-700"></i>
+                  </div>
+                  <h3 class="course-card__title text-2xl font-black futuristic-title">{{ article.title }}</h3>
+                  <p class="course-card__description text-sm">{{ article.short_description }}</p>
+                  <div class="course-card__meta flex justify-between mt-2 text-sm">
+                    <span>{{ article.hours }}</span>
+                  </div>
+                  <div class="course-card__price text-2xl font-black text-red-700 mt-2">{{ article.price }}</div>
+                </div>
+              </a>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+
+      <!-- Кнопка "Все курсы" -->
+      <div class="mt-8 text-center">
+        <a href="{{ SITEURL }}/courses.html" class="button button--primary button--large">
+          СМОТРЕТЬ ВСЕ КУРСЫ →
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== MEDIA ===== -->
+<section id="media" class="media">
+  <div class="container">
+    <div class="media__card">
+      <h2 class="media__title">МЕДИАТЕКА</h2>
+
+      <!-- Галерея 3 колонки -->
+      <div class="media__grid media__grid--3">
+        <div class="media__item">
+          <img src="{{ SITEURL }}/gallery/oborona.png" alt="Оборона Петрограда" class="media__item-image">
+          <div class="media__item-body">
+            <p class="media__item-title">А. ДЕЙНЕКА «ОБОРОНА ПЕТРОГРАДА»</p>
+            <p>1928</p>
+          </div>
+        </div>
+        <div class="media__item">
+          <img src="{{ SITEURL }}/gallery/beg.jpg" alt="Бег" class="media__item-image">
+          <div class="media__item-body">
+            <p class="media__item-title">А. ДЕЙНЕКА «БЕГ»</p>
+            <p>1934</p>
+          </div>
+        </div>
+        <div class="media__item">
+          <img src="{{ SITEURL }}/gallery/polden.png" alt="Выход в космос" class="media__item-image">
+          <div class="media__item-body">
+            <p class="media__item-title">СОКОЛОВ, ЛЕОНОВ «ВЫХОД В КОСМОС»</p>
+            <p>1965</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Блог 2 колонки -->
+      <div class="media__grid media__grid--2">
+        <div class="media__item">
+          <div class="media__item-body">
+            <div class="media__item-date">12.03.2026</div>
+            <h3 class="media__item-title" style="font-size: 1.5rem;">КАК СОБРАТЬ РОБОТА ЗА ВЫХОДНЫЕ</h3>
+            <p>Пошаговое руководство с Arduino.</p>
+            <a href="#" class="media__item-link">ЧИТАТЬ →</a>
+          </div>
+        </div>
+        <div class="media__item">
+          <div class="media__item-body">
+            <div class="media__item-date">05.03.2026</div>
+            <h3 class="media__item-title" style="font-size: 1.5rem;">ФУТУРИЗМ В ОБРАЗОВАНИИ: ОТ ДЕЙНЕКИ ДО НАШИХ ДНЕЙ</h3>
+            <p>Визуальные приёмы для инженерного мышления.</p>
+            <a href="#" class="media__item-link">ЧИТАТЬ →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Архив -->
+      <div class="media__archive">
+        <div style="display: flex; align-items: center; gap: 1rem;">
+          <i class="fas fa-book-open media__archive-icon"></i>
+          <div>
+            <h3 class="media__archive-title">ЖУРНАЛ «ЮНЫЙ ТЕХНИК»</h3>
+            <p class="media__archive-desc">Архив легендарного советского журнала</p>
+          </div>
+        </div>
+        <a href="https://archive.org/details/young_technician" target="_blank" class="button button--primary">ПЕРЕЙТИ К АРХИВУ</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SHOP ===== -->
+<section id="shop" class="shop">
+  <div class="container">
+    <div class="shop__card">
+      <h2 class="shop__title">МАГАЗИН</h2>
+      <div class="shop__grid">
+        <div class="product-card">
+          <i class="fas fa-tshirt product-card__icon"></i>
+          <h3 class="product-card__title">ФУТБОЛКА «РАКЕТА»</h3>
+          <div class="product-card__price">1 490 ₽</div>
+          <button class="button button--dark button--block">В КОРЗИНУ</button>
+        </div>
+        <div class="product-card">
+          <i class="fas fa-mug-hot product-card__icon"></i>
+          <h3 class="product-card__title">КРУЖКА «ИНЖЕНЕР»</h3>
+          <div class="product-card__price">790 ₽</div>
+          <button class="button button--dark button--block">В КОРЗИНУ</button>
+        </div>
+        <div class="product-card">
+          <i class="fas fa-microchip product-card__icon"></i>
+          <h3 class="product-card__title">НАБОР «РАДИОПРИЕМНИК»</h3>
+          <div class="product-card__price">2 990 ₽</div>
+          <button class="button button--dark button--block">В КОРЗИНУ</button>
+        </div>
+        <div class="product-card">
+          <i class="fas fa-solar-panel product-card__icon"></i>
+          <h3 class="product-card__title">КОНСТРУКТОР «СОЛНЕЧНАЯ БАТАРЕЯ»</h3>
+          <div class="product-card__price">3 490 ₽</div>
+          <button class="button button--dark button--block">В КОРЗИНУ</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section id="contact" class="contact">
+  <div class="container">
+    <div class="contact__inner">
+      <h2 class="contact__title">ЗАПИСЬ НА КУРС</h2>
+      <form netlify class="contact__form">
+        <input type="text" placeholder="ФАМИЛИЯ, ИМЯ" class="contact__input" required>
+        <input type="tel" placeholder="ТЕЛЕФОН" class="contact__input" required>
+        <input type="email" placeholder="EMAIL" class="contact__input" required>
+        <button type="submit" class="button button--primary button--large button--block">ОТПРАВИТЬ ЗАЯВКУ</button>
+      </form>
+      <div class="contact__footer-text">
+        * ВИСТАВКА РАБОТ НАОММАРА МАКОВСКОГО — ЗВЁЗДНАЯ 18 — ТРАВЕНЬ 3,4,10,18,24,34,36,А
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,21 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: ["master"]      # ← было "main", стало "master"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    uses: "getpelican/pelican/.github/workflows/github_pages.yml@main"
+    with:
+      settings: "publishconf.py"
