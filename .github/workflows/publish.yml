@@ -20,3 +20,5 @@ jobs:
     uses: "getpelican/pelican/.github/workflows/github_pages.yml@main"
     with:
       settings: "publishconf.py"
+
+      
