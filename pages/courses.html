@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Все курсы | Дворец пионеров</title>
+
+  <!-- Tailwind + Alpine (для обратной совместимости) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+  <!-- Основной CSS -->
+  <link rel="stylesheet" href="https://pionerpalace.ru/static/css/styles.css">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<body>
+
+  <!-- Шумовая текстура -->
+  <div class="page__noise"></div>
+
+  <!-- ========== HEADER ========== -->
+<header class="header">
+  <div class="container header__inner">
+    <div class="header__brand">
+      <div class="header__icon">⚡</div>
+      <div>
+        <h1 class="header__title">Дворец пионеров</h1>
+        <span class="header__subtitle">ДПО • УДАРНАЯ ПОДГОТОВКА • ТЕХНИКА</span>
+      </div>
+    </div>
+
+    <nav class="header__nav">
+      <a href="https://pionerpalace.ru/courses.html" class="header__link">КУРСЫ</a>
+      <a href="#media" class="header__link">МЕДИАТЕКА</a>
+      <a href="#shop" class="header__link">МАГАЗИН</a>
+      <a href="https://pionerpalace.ru/about.html" class="header__link">О НАС</a>
+      <a href="https://pionerpalace.ru/contacts.html" class="header__link">КОНТАКТЫ</a>
+    </nav>
+
+    <div class="header__actions">
+      <a href="#contact" class="button button--primary">ЗАПИСАТЬСЯ</a>
+    </div>
+  </div>
+</header>
+  <!-- ========== MAIN ========== -->
+  <main>
+
+<section class="courses-page">
+  <div class="container">
+    <!-- Плакатный заголовок -->
+    <div class="plakat-card p-8 mb-12" style="background-color: rgba(255,255,255,0.6);">
+      <h1 class="futuristic-title text-5xl md:text-7xl font-black" style="color: var(--text-primary);">ВСЕ КУРСЫ</h1>
+      <p class="text-lg mt-2" style="color: var(--text-secondary);">Выберите направление и начните обучение уже сегодня</p>
+    </div>
+
+    <!-- ===== ДЕТСКИЕ КУРСЫ ===== -->
+    <div class="courses-page__section mb-16">
+      <h2 class="futuristic-title text-4xl md:text-5xl font-black mb-8" style="border-left: 8px solid var(--accent); padding-left: 1.25rem;">
+        ДЛЯ ДЕТЕЙ (7–17 лет)
+      </h2>
+      <div class="courses-page__grid grid grid-cols-1 md:grid-cols-3 gap-6">
+          <a href="https://pionerpalace.ru/courses/deti-animation.html" class="course-card-link block transition-transform hover:scale-105">
+            <div class="course-card p-5 border-2 border-black/20" style="background-color: var(--card-bg);">
+              <div class="course-card__icon w-14 h-14 flex items-center justify-center mb-3 border-2 border-red-700">
+                <i class="fas fa- text-3xl text-red-700"></i>
+              </div>
+              <h3 class="course-card__title text-2xl font-black futuristic-title">Создание мультфильмов и 2D-анимация</h3>
+              <p class="course-card__description text-sm"></p>
+              <div class="course-card__meta flex justify-between mt-2 text-sm">
+                <span>Объём: 36 ак.ч</span>
+                <span>Возраст: 8–12 лет</span>
+              </div>
+              <div class="course-card__price text-2xl font-black text-red-700 mt-2">Цена: 20 000 ₽</div>
+            </div>
+          </a>
+          <a href="https://pionerpalace.ru/courses/deti-arduino.html" class="course-card-link block transition-transform hover:scale-105">
+            <div class="course-card p-5 border-2 border-black/20" style="background-color: var(--card-bg);">
+              <div class="course-card__icon w-14 h-14 flex items-center justify-center mb-3 border-2 border-red-700">
+                <i class="fas fa- text-3xl text-red-700"></i>
+              </div>
+              <h3 class="course-card__title text-2xl font-black futuristic-title">Робототехника на Arduino</h3>
+              <p class="course-card__description text-sm"></p>
+              <div class="course-card__meta flex justify-between mt-2 text-sm">
+                <span>Объём: 48 ак.ч</span>
+                <span>Возраст: 9–13 лет</span>
+              </div>
+              <div class="course-card__price text-2xl font-black text-red-700 mt-2">Цена: 32 000 ₽</div>
+            </div>
+          </a>
+          <a href="https://pionerpalace.ru/courses/deti-blender.html" class="course-card-link block transition-transform hover:scale-105">
+            <div class="course-card p-5 border-2 border-black/20" style="background-color: var(--card-bg);">
+              <div class="course-card__icon w-14 h-14 flex items-center justify-center mb-3 border-2 border-red-700">
+                <i class="fas fa- text-3xl text-red-700"></i>
+              </div>
+              <h3 class="course-card__title text-2xl font-black futuristic-title">ИНЖЕНЕРНАЯ АКАДЕМИЯ</h3>
+              <p class="course-card__description text-sm"></p>
+              <div class="course-card__meta flex justify-between mt-2 text-sm">
+                <span>Объём: 40 ак.ч</span>
+                <span>Возраст: 10–16 лет</span>
+              </div>
+              <div class="course-card__price text-2xl font-black text-red-700 mt-2">Цена: 24 000 ₽</div>
+            </div>
+          </a>
+          <a href="https://pionerpalace.ru/courses/deti-data-science.html" class="course-card-link block transition-transform hover:scale-105">
+            <div class="course-card p-5 border-2 border-black/20" style="background-color: var(--card-bg);">
+              <div class="course-card__icon w-14 h-14 flex items-center justify-center mb-3 border-2 border-red-700">
+                <i class="fas fa- text-3xl text-red-700"></i>
+              </div>
+              <h3 class="course-card__title text-2xl font-black futuristic-title">Введение в Data Science</h3>
+              <p class="course-card__description text-sm"></p>
+              <div class="course-card__meta flex justify-between mt-2 text-sm">
+                <span>Объём: 48 ак.ч</span>
+                <span>Возраст: 14–17 лет</span>
+              </div>
+              <div class="course-card__price text-2xl font-black text-red-700 mt-2">Цена: 30 000 ₽</div>
+            </div>
+          </a>
+          <a href="https://pionerpalace.ru/courses/deti-mechanika.html" class="course-card-link block transition-transform hover:scale-105">
+            <div class="course-card p-5 border-2 border-black/20" style="background-color: var(--card-bg);">
+              <div class="course-card__icon w-14 h-14 flex items-center justify-center mb-3 border-2 border-red-700">
+                <i class="fas fa- text-3xl text-red-700"></i>
+              </div>
+              <h3 class="course-card__title text-2xl font-black futuristic-title">Юный инженер: механика и автоматика</h3>
+              <p class="course-card__description text-sm"></p>
+              <div class="course-card__meta flex justify-between mt-2 text-sm">
+                <span>Объём: 40 ак.ч</span>
+                <span>Возраст: 10–14 лет</span>
+              </div>
+              <div class="course-card__price text-2xl font-black text-red-700 mt-2">Цена: 28 000 ₽</div>
+            </div>
+          </a>
+          <a href="https://pionerpalace.ru/courses/deti-motion.html" class="course-card-link block transition-transform hover:scale-105">
+            <div class="course-card p-5 border-2 border-black/20" style="background-color: var(--card-bg);">
+              <div class="course-card__icon w-14 h-14 flex items-center justify-center mb-3 border-2 border-red-700">
+                <i class="fas fa- text-3xl text-red-700"></i>
+              </div>
+              <h3 class="course-card__title text-2xl font-black futuristic-title">Моушн-дизайн для начинающих</h3>
+              <p class="course-card__description text-sm"></p>
+              <div class="course-card__meta flex justify-between mt-2 text-sm">
+                <span>Объём: 40 ак.ч</span>
+                <span>Возраст: 12–17 лет</span>
+              </div>
+              <div class="course-card__price text-2xl font-black text-red-700 mt-2">Цена: 26 000 ₽</div>
+            </div>
+          </a>
+          <a href="https://pionerpalace.ru/courses/deti-python.html" class="course-card-link block transition-transform hover:scale-105">
+            <div class="course-card p-5 border-2 border-black/20" style="background-color: var(--card-bg);">
+              <div class="course-card__icon w-14 h-14 flex items-center justify-center mb-3 border-2 border-red-700">
+                <i class="fas fa- text-3xl text-red-700"></i>
+              </div>
+              <h3 class="course-card__title text-2xl font-black futuristic-title">Python: от игр до чат-ботов</h3>
+              <p class="course-card__description text-sm"></p>
+              <div class="course-card__meta flex justify-between mt-2 text-sm">
+                <span>Объём: 56 ак.ч</span>
+                <span>Возраст: 12–17 лет</span>
+              </div>
+              <div class="course-card__price text-2xl font-black text-red-700 mt-2">Цена: 28 000 ₽</div>
+            </div>
+          </a>
+          <a href="https://pionerpalace.ru/courses/deti-roblox.html" class="course-card-link block transition-transform hover:scale-105">
+            <div class="course-card p-5 border-2 border-black/20" style="background-color: var(--card-bg);">
+              <div class="course-card__icon w-14 h-14 flex items-center justify-center mb-3 border-2 border-red-700">
+                <i class="fas fa- text-3xl text-red-700"></i>
+              </div>
+              <h3 class="course-card__title text-2xl font-black futuristic-title">Разработка игр на Roblox</h3>
+              <p class="course-card__description text-sm"></p>
+              <div class="course-card__meta flex justify-between mt-2 text-sm">
+                <span>Объём: 48 ак.ч</span>
+                <span>Возраст: 10–14 лет</span>
+              </div>
+              <div class="course-card__price text-2xl font-black text-red-700 mt-2">Цена: 30 000 ₽</div>
+            </div>
+          </a>
+          <a href="https://pionerpalace.ru/courses/deti-scratch.html" class="course-card-link block transition-transform hover:scale-105">
+            <div class="course-card p-5 border-2 border-black/20" style="background-color: var(--card-bg);">
+              <div class="course-card__icon w-14 h-14 flex items-center justify-center mb-3 border-2 border-red-700">
+                <i class="fas fa- text-3xl text-red-700"></i>
+              </div>
+              <h3 class="course-card__title text-2xl font-black futuristic-title">Создание игр на Scratch</h3>
+              <p class="course-card__description text-sm"></p>
+              <div class="course-card__meta flex justify-between mt-2 text-sm">
+                <span>Объём: 32 ак.ч</span>
+                <span>Возраст: 7–10 лет</span>
+              </div>
+              <div class="course-card__price text-2xl font-black text-red-700 mt-2">Цена: 18 000 ₽</div>
+            </div>
+          </a>
+          <a href="https://pionerpalace.ru/courses/deti-sql.html" class="course-card-link block transition-transform hover:scale-105">
+            <div class="course-card p-5 border-2 border-black/20" style="background-color: var(--card-bg);">
+              <div class="course-card__icon w-14 h-14 flex items-center justify-center mb-3 border-2 border-red-700">
+                <i class="fas fa- text-3xl text-red-700"></i>
+              </div>
+              <h3 class="course-card__title text-2xl font-black futuristic-title">Основы баз данных и SQL</h3>
+              <p class="course-card__description text-sm"></p>
+              <div class="course-card__meta flex justify-between mt-2 text-sm">
+                <span>Объём: 36 ак.ч</span>
+                <span>Возраст: 12–17 лет</span>
+              </div>
+              <div class="course-card__price text-2xl font-black text-red-700 mt-2">Цена: 22 000 ₽</div>
+            </div>
+          </a>
+          <a href="https://pionerpalace.ru/courses/deti-tflex.html" class="course-card-link block transition-transform hover:scale-105">
+            <div class="course-card p-5 border-2 border-black/20" style="background-color: var(--card-bg);">
+              <div class="course-card__icon w-14 h-14 flex items-center justify-center mb-3 border-2 border-red-700">
+                <i class="fas fa- text-3xl text-red-700"></i>
+              </div>
+              <h3 class="course-card__title text-2xl font-black futuristic-title">Введение в T‑FLEX CAD</h3>
+              <p class="course-card__description text-sm"></p>
+              <div class="course-card__meta flex justify-between mt-2 text-sm">
+                <span>Объём: 36 ак.ч</span>
+                <span>Возраст: 14–17 лет</span>
+              </div>
+              <div class="course-card__price text-2xl font-black text-red-700 mt-2">Цена: 20 000 ₽</div>
+            </div>
+          </a>
+          <a href="https://pionerpalace.ru/courses/deti-video.html" class="course-card-link block transition-transform hover:scale-105">
+            <div class="course-card p-5 border-2 border-black/20" style="background-color: var(--card-bg);">
+              <div class="course-card__icon w-14 h-14 flex items-center justify-center mb-3 border-2 border-red-700">
+                <i class="fas fa- text-3xl text-red-700"></i>
+              </div>
+              <h3 class="course-card__title text-2xl font-black futuristic-title">Юный видеомонтажёр</h3>
+              <p class="course-card__description text-sm"></p>
+              <div class="course-card__meta flex justify-between mt-2 text-sm">
+                <span>Объём: 32 ак.ч</span>
+                <span>Возраст: 10–16 лет</span>
+              </div>
+              <div class="course-card__price text-2xl font-black text-red-700 mt-2">Цена: 18 000 ₽</div>
+            </div>
+          </a>
+          <a href="https://pionerpalace.ru/courses/deti-web.html" class="course-card-link block transition-transform hover:scale-105">
+            <div class="course-card p-5 border-2 border-black/20" style="background-color: var(--card-bg);">
+              <div class="course-card__icon w-14 h-14 flex items-center justify-center mb-3 border-2 border-red-700">
+                <i class="fas fa- text-3xl text-red-700"></i>
+              </div>
+              <h3 class="course-card__title text-2xl font-black futuristic-title">Юный веб-разработчик</h3>
+              <p class="course-card__description text-sm"></p>
+              <div class="course-card__meta flex justify-between mt-2 text-sm">
+                <span>Объём: 48–64 ак.ч</span>
+                <span>Возраст: 10–16 лет</span>
+              </div>
+              <div class="course-card__price text-2xl font-black text-red-700 mt-2">Цена: 25 000–35 000 ₽</div>
+            </div>
+          </a>
+      </div>
+    </div>
+
+    <!-- ===== ВЗРОСЛЫЕ КУРСЫ ===== -->
+    <div class="courses-page__section">
+      <h2 class="futuristic-title text-4xl md:text-5xl font-black mb-8" style="border-left: 8px solid var(--accent); padding-left: 1.25rem;">
+        ДЛЯ ВЗРОСЛЫХ (ДПО)
+      </h2>
+      <div class="courses-page__grid grid grid-cols-1 md:grid-cols-3 gap-6">
+          <a href="https://pionerpalace.ru/courses/vzr-ai.html" class="course-card-link block transition-transform hover:scale-105">
+            <div class="course-card p-5 border-2 border-black/20" style="background-color: var(--card-bg);">
+              <div class="course-card__icon w-14 h-14 flex items-center justify-center mb-3 border-2 border-red-700">
+                <i class="fas fa- text-3xl text-red-700"></i>
+              </div>
+              <h3 class="course-card__title text-2xl font-black futuristic-title">AI-грамотность и практическое применение</h3>
+              <p class="course-card__description text-sm"></p>
+              <div class="course-card__meta flex justify-between mt-2 text-sm">
+                <span>Объём: 24 ак.ч</span>
+              </div>
+              <div class="course-card__price text-2xl font-black text-red-700 mt-2">Цена: 15 000 ₽</div>
+            </div>
+          </a>
+          <a href="https://pionerpalace.ru/courses/vzr-algorithms.html" class="course-card-link block transition-transform hover:scale-105">
+            <div class="course-card p-5 border-2 border-black/20" style="background-color: var(--card-bg);">
+              <div class="course-card__icon w-14 h-14 flex items-center justify-center mb-3 border-2 border-red-700">
+                <i class="fas fa- text-3xl text-red-700"></i>
+              </div>
+              <h3 class="course-card__title text-2xl font-black futuristic-title">ИНЖЕНЕРНАЯ АКАДЕМИЯ</h3>
+              <p class="course-card__description text-sm"></p>
+              <div class="course-card__meta flex justify-between mt-2 text-sm">
+                <span>Объём: 80 ак.ч</span>
+              </div>
+              <div class="course-card__price text-2xl font-black text-red-700 mt-2">Цена: 45 000 ₽</div>
+            </div>
+          </a>
+          <a href="https://pionerpalace.ru/courses/vzr-blender-3d.html" class="course-card-link block transition-transform hover:scale-105">
+            <div class="course-card p-5 border-2 border-black/20" style="background-color: var(--card-bg);">
+              <div class="course-card__icon w-14 h-14 flex items-center justify-center mb-3 border-2 border-red-700">
+                <i class="fas fa- text-3xl text-red-700"></i>
+              </div>
+              <h3 class="course-card__title text-2xl font-black futuristic-title">3D-моделирование в Blender + 3D-печать</h3>
+              <p class="course-card__description text-sm"></p>
+              <div class="course-card__meta flex justify-between mt-2 text-sm">
+                <span>Объём: 60 ак.ч</span>
+              </div>
+              <div class="course-card__price text-2xl font-black text-red-700 mt-2">Цена: 35 000 ₽</div>
+            </div>
+          </a>
+          <a href="https://pionerpalace.ru/courses/vzr-blender-motion.html" class="course-card-link block transition-transform hover:scale-105">
+            <div class="course-card p-5 border-2 border-black/20" style="background-color: var(--card-bg);">
+              <div class="course-card__icon w-14 h-14 flex items-center justify-center mb-3 border-2 border-red-700">
+                <i class="fas fa- text-3xl text-red-700"></i>
+              </div>
+              <h3 class="course-card__title text-2xl font-black futuristic-title">Продвинутый Blender: моушн-дизайн</h3>
+              <p class="course-card__description text-sm"></p>
+              <div class="course-card__meta flex justify-between mt-2 text-sm">
+                <span>Объём: 80 ак.ч</span>
+              </div>
+              <div class="course-card__price text-2xl font-black text-red-700 mt-2">Цена: 45 000 ₽</div>
+            </div>
+          </a>
+          <a href="https://pionerpalace.ru/courses/vzr-data-engineer.html" class="course-card-link block transition-transform hover:scale-105">
+            <div class="course-card p-5 border-2 border-black/20" style="background-color: var(--card-bg);">
+              <div class="course-card__icon w-14 h-14 flex items-center justify-center mb-3 border-2 border-red-700">
+                <i class="fas fa- text-3xl text-red-700"></i>
+              </div>
+              <h3 class="course-card__title text-2xl font-black futuristic-title">Data Engineer: от SQL до Big Data</h3>
+              <p class="course-card__description text-sm"></p>
+              <div class="course-card__meta flex justify-between mt-2 text-sm">
+                <span>Объём: 80–120 ак.ч</span>
+              </div>
+              <div class="course-card__price text-2xl font-black text-red-700 mt-2">Цена: 50 000–90 000 ₽</div>
+            </div>
+          </a>
+          <a href="https://pionerpalace.ru/courses/vzr-data-science-pandas.html" class="course-card-link block transition-transform hover:scale-105">
+            <div class="course-card p-5 border-2 border-black/20" style="background-color: var(--card-bg);">
+              <div class="course-card__icon w-14 h-14 flex items-center justify-center mb-3 border-2 border-red-700">
+                <i class="fas fa- text-3xl text-red-700"></i>
+              </div>
+              <h3 class="course-card__title text-2xl font-black futuristic-title">Data Science: Pandas, статистика, визуализация</h3>
+              <p class="course-card__description text-sm"></p>
+              <div class="course-card__meta flex justify-between mt-2 text-sm">
+                <span>Объём: 60–80 ак.ч</span>
+              </div>
+              <div class="course-card__price text-2xl font-black text-red-700 mt-2">Цена: 35 000–55 000 ₽</div>
+            </div>
+          </a>
+          <a href="https://pionerpalace.ru/courses/vzr-dl.html" class="course-card-link block transition-transform hover:scale-105">
+            <div class="course-card p-5 border-2 border-black/20" style="background-color: var(--card-bg);">
+              <div class="course-card__icon w-14 h-14 flex items-center justify-center mb-3 border-2 border-red-700">
+                <i class="fas fa- text-3xl text-red-700"></i>
+              </div>
+              <h3 class="course-card__title text-2xl font-black futuristic-title">Deep Learning (PyTorch/TensorFlow)</h3>
+              <p class="course-card__description text-sm"></p>
+              <div class="course-card__meta flex justify-between mt-2 text-sm">
+                <span>Объём: 96 ак.ч</span>
+              </div>
+              <div class="course-card__price text-2xl font-black text-red-700 mt-2">Цена: 70 000 ₽</div>
+            </div>
+          </a>
+          <a href="https://pionerpalace.ru/courses/vzr-ml.html" class="course-card-link block transition-transform hover:scale-105">
+            <div class="course-card p-5 border-2 border-black/20" style="background-color: var(--card-bg);">
+              <div class="course-card__icon w-14 h-14 flex items-center justify-center mb-3 border-2 border-red-700">
+                <i class="fas fa- text-3xl text-red-700"></i>
+              </div>
+              <h3 class="course-card__title text-2xl font-black futuristic-title">Машинное обучение для инженеров</h3>
+              <p class="course-card__description text-sm"></p>
+              <div class="course-card__meta flex justify-between mt-2 text-sm">
+                <span>Объём: 72 ак.ч</span>
+              </div>
+              <div class="course-card__price text-2xl font-black text-red-700 mt-2">Цена: 55 000 ₽</div>
+            </div>
+          </a>
+          <a href="https://pionerpalace.ru/courses/vzr-photoshop.html" class="course-card-link block transition-transform hover:scale-105">
+            <div class="course-card p-5 border-2 border-black/20" style="background-color: var(--card-bg);">
+              <div class="course-card__icon w-14 h-14 flex items-center justify-center mb-3 border-2 border-red-700">
+                <i class="fas fa- text-3xl text-red-700"></i>
+              </div>
+              <h3 class="course-card__title text-2xl font-black futuristic-title">Photoshop для дизайнеров и видеоредакторов</h3>
+              <p class="course-card__description text-sm"></p>
+              <div class="course-card__meta flex justify-between mt-2 text-sm">
+                <span>Объём: 40 ак.ч</span>
+              </div>
+              <div class="course-card__price text-2xl font-black text-red-700 mt-2">Цена: 22 000 ₽</div>
+            </div>
+          </a>
+          <a href="https://pionerpalace.ru/courses/vzr-python-fullstack.html" class="course-card-link block transition-transform hover:scale-105">
+            <div class="course-card p-5 border-2 border-black/20" style="background-color: var(--card-bg);">
+              <div class="course-card__icon w-14 h-14 flex items-center justify-center mb-3 border-2 border-red-700">
+                <i class="fas fa- text-3xl text-red-700"></i>
+              </div>
+              <h3 class="course-card__title text-2xl font-black futuristic-title">ИНЖЕНЕРНАЯ АКАДЕМИЯ</h3>
+              <p class="course-card__description text-sm"></p>
+              <div class="course-card__meta flex justify-between mt-2 text-sm">
+                <span>Объём: 120 ак.ч</span>
+              </div>
+              <div class="course-card__price text-2xl font-black text-red-700 mt-2">Цена: 60 000 ₽</div>
+            </div>
+          </a>
+          <a href="https://pionerpalace.ru/courses/vzr-sql.html" class="course-card-link block transition-transform hover:scale-105">
+            <div class="course-card p-5 border-2 border-black/20" style="background-color: var(--card-bg);">
+              <div class="course-card__icon w-14 h-14 flex items-center justify-center mb-3 border-2 border-red-700">
+                <i class="fas fa- text-3xl text-red-700"></i>
+              </div>
+              <h3 class="course-card__title text-2xl font-black futuristic-title">Базы данных и SQL (углублённо)</h3>
+              <p class="course-card__description text-sm"></p>
+              <div class="course-card__meta flex justify-between mt-2 text-sm">
+                <span>Объём: 60 ак.ч</span>
+              </div>
+              <div class="course-card__price text-2xl font-black text-red-700 mt-2">Цена: 35 000 ₽</div>
+            </div>
+          </a>
+          <a href="https://pionerpalace.ru/courses/vzr-tflex.html" class="course-card-link block transition-transform hover:scale-105">
+            <div class="course-card p-5 border-2 border-black/20" style="background-color: var(--card-bg);">
+              <div class="course-card__icon w-14 h-14 flex items-center justify-center mb-3 border-2 border-red-700">
+                <i class="fas fa- text-3xl text-red-700"></i>
+              </div>
+              <h3 class="course-card__title text-2xl font-black futuristic-title">T‑FLEX CAD: 3D-моделирование и документация</h3>
+              <p class="course-card__description text-sm"></p>
+              <div class="course-card__meta flex justify-between mt-2 text-sm">
+                <span>Объём: 72 ак.ч</span>
+              </div>
+              <div class="course-card__price text-2xl font-black text-red-700 mt-2">Цена: 19 000–23 500 ₽</div>
+            </div>
+          </a>
+          <a href="https://pionerpalace.ru/courses/vzr-web.html" class="course-card-link block transition-transform hover:scale-105">
+            <div class="course-card p-5 border-2 border-black/20" style="background-color: var(--card-bg);">
+              <div class="course-card__icon w-14 h-14 flex items-center justify-center mb-3 border-2 border-red-700">
+                <i class="fas fa- text-3xl text-red-700"></i>
+              </div>
+              <h3 class="course-card__title text-2xl font-black futuristic-title">HTML, CSS, JS (продвинутый) + React</h3>
+              <p class="course-card__description text-sm"></p>
+              <div class="course-card__meta flex justify-between mt-2 text-sm">
+                <span>Объём: 120–160 ак.ч</span>
+              </div>
+              <div class="course-card__price text-2xl font-black text-red-700 mt-2">Цена: 40 000–80 000 ₽</div>
+            </div>
+          </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__inner">
+      <!-- Блок 1: О нас -->
+      <div>
+        <h3 class="footer__title">Дворец пионеров</h3>
+        <p class="footer__text">Лицензия ДПО №Л035-01298-78/00123456</p>
+        <p class="footer__text" style="margin-top: 0.5rem; font-size: 0.7rem; opacity: 0.7;">
+          Обучение программированию, инженерии, 3D-моделированию и дизайну для детей и взрослых.
+        </p>
+      </div>
+
+      <!-- Блок 2: Страницы сайта -->
+      <div>
+        <h3 class="footer__title">СТРАНИЦЫ</h3>
+        <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.8rem; line-height: 2;">
+          <li><a href="https://pionerpalace.ru/" style="color: #9CA3AF; text-decoration: none;">Главная</a></li>
+          <li><a href="https://pionerpalace.ru/courses.html" style="color: #9CA3AF; text-decoration: none;">Все курсы</a></li>
+          <li><a href="https://pionerpalace.ru/about.html" style="color: #9CA3AF; text-decoration: none;">О нас</a></li>
+          <li><a href="https://pionerpalace.ru/contacts.html" style="color: #9CA3AF; text-decoration: none;">Контакты</a></li>
+        </ul>
+      </div>
+
+      <!-- Блок 3: Контакты и партнёры -->
+      <div>
+        <h3 class="footer__title">КОНТАКТЫ</h3>
+        <p class="footer__text">+7 (812) 123-45-67</p>
+        <p class="footer__text">@pionerpalace</p>
+        <p class="footer__text">
+          <a href="mailto:info@pionerpalace.ru" style="color: #9CA3AF; text-decoration: none;">info@pionerpalace.ru</a>
+        </p>
+        <h3 class="footer__title" style="margin-top: 1rem;">ПАРТНЁРЫ</h3>
+        <p class="footer__text">Российское общество «Знание»<br>Союз юных инженеров</p>
+      </div>
+    </div>
+
+    <div class="footer__bottom">ДИЗАЙН ВДОХНОВЛЁН СОВЕТСКИМ ПЛАКАТОМ 1920–1930-Х ГОДОВ</div>
+  </div>
+</footer>
+</body>
+</html>
