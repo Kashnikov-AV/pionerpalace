@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Медиатека | Дворец пионеров</title>
+
+  <!-- Tailwind + Alpine (для обратной совместимости) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+  <!-- Основной CSS -->
+  <link rel="stylesheet" href="https://pionerpalace.ru/static/css/styles.css">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<body>
+
+  <!-- Шумовая текстура -->
+  <div class="page__noise"></div>
+
+  <!-- ========== HEADER ========== -->
+<header class="header">
+  <div class="container header__inner">
+    <div class="header__brand">
+      <a href="https://pionerpalace.ru/" class="header__brand-link" style="display: flex; align-items: center; gap: 0.75rem; text-decoration: none;">
+        <div class="header__icon">⚡</div>
+        <div>
+          <h1 class="header__title">Дворец пионеров</h1>
+          <span class="header__subtitle">ДПО • УДАРНАЯ ПОДГОТОВКА • ТЕХНИКА</span>
+        </div>
+      </a>
+    </div>
+
+    <nav class="header__nav">
+      <a href="https://pionerpalace.ru/courses.html" class="header__link">КУРСЫ</a>
+      <a href="https://pionerpalace.ru/mediateka.html" class="header__link">МЕДИАТЕКА</a>
+      <a href="#shop" class="header__link">МАГАЗИН</a>
+      <a href="https://pionerpalace.ru/about.html" class="header__link">О НАС</a>
+      <a href="https://pionerpalace.ru/contacts.html" class="header__link">КОНТАКТЫ</a>
+    </nav>
+
+    <div class="header__actions">
+      <a href="#contact" class="button button--primary">ЗАПИСАТЬСЯ</a>
+    </div>
+  </div>
+</header>
+  <!-- ========== MAIN ========== -->
+  <main>
+
+<section class="page-detail py-16">
+  <div class="container">
+    <div class="plakat-card p-8 md:p-10">
+      <h1 class="futuristic-title text-4xl md:text-6xl font-black" style="color: var(--text-primary);">Медиатека</h1>
+      <div class="mt-8 prose max-w-none" style="color: var(--text-secondary);">
+        <h1>🎬 Медиатека</h1>
+<p>Добро пожаловать в медиатеку «Дворца пионеров»! Здесь собраны полезные материалы, видеоуроки, архив журналов и другие образовательные ресурсы.</p>
+<hr>
+<h2>📚 Журналы «Юный Техник»</h2>
+<p>Оцифрованные выпуски легендарного советского журнала и его приложений.</p>
+<table>
+<thead>
+<tr>
+<th>Серия</th>
+<th>Годы</th>
+<th>Выпусков</th>
+<th>Ссылка</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>📘 Библиотечка для умелых рук</td>
+<td>1956–1971</td>
+<td>16 лет</td>
+<td><a href="/magazines/bibliotechka/">Перейти →</a></td>
+</tr>
+<tr>
+<td>📗 ЮТ для умелых рук</td>
+<td>1972–1990</td>
+<td>19 лет</td>
+<td><a href="/magazines/yt/">Перейти →</a></td>
+</tr>
+<tr>
+<td>📕 Левша</td>
+<td>1991–2025</td>
+<td>35 лет</td>
+<td><a href="/magazines/levsha/">Перейти →</a></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2>🎥 Видеоуроки</h2>
+<table>
+<thead>
+<tr>
+<th>Название</th>
+<th>Описание</th>
+<th>Ссылка</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Введение в 3D-моделирование</td>
+<td>Базовые приёмы работы в Blender</td>
+<td><a href="#">Смотреть</a></td>
+</tr>
+<tr>
+<td>Arduino для начинающих</td>
+<td>Первые шаги с микроконтроллерами</td>
+<td><a href="#">Смотреть</a></td>
+</tr>
+<tr>
+<td>Основы Python</td>
+<td>Программирование с нуля</td>
+<td><a href="#">Смотреть</a></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2>📖 Полезные статьи</h2>
+<ul>
+<li><a href="#">Как собрать робота за выходные</a></li>
+<li><a href="#">Футуризм в образовании: от Дейнеки до наших дней</a></li>
+<li><a href="#">Советы юному инженеру</a></li>
+</ul>
+<hr>
+<h2>📌 Форматы файлов</h2>
+<ul>
+<li><strong>PDF</strong> — универсальный формат для документов</li>
+<li><strong>DJVU</strong> — компактный формат для сканированных книг (для просмотра используйте <a href="https://windjview.sourceforge.io/">WinDjView</a>)</li>
+</ul>
+<hr>
+<p>📧 <strong>По вопросам и предложениям:</strong> <a href="mailto:info@pionerpalace.ru">info@pionerpalace.ru</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__inner">
+      <!-- Блок 1: О нас -->
+      <div>
+        <h3 class="footer__title">Дворец пионеров</h3>
+        <p class="footer__text">Лицензия ДПО №Л035-01298-78/00123456</p>
+        <p class="footer__text" style="margin-top: 0.5rem; font-size: 0.7rem; opacity: 0.7;">
+          Обучение программированию, инженерии, 3D-моделированию и дизайну для детей и взрослых.
+        </p>
+      </div>
+
+      <!-- Блок 2: Страницы сайта -->
+      <div>
+        <h3 class="footer__title">СТРАНИЦЫ</h3>
+        <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.8rem; line-height: 2;">
+          <li><a href="https://pionerpalace.ru/" style="color: #9CA3AF; text-decoration: none;">Главная</a></li>
+          <li><a href="https://pionerpalace.ru/courses.html" style="color: #9CA3AF; text-decoration: none;">Все курсы</a></li>
+          <li><a href="https://pionerpalace.ru/about.html" style="color: #9CA3AF; text-decoration: none;">О нас</a></li>
+          <li><a href="https://pionerpalace.ru/contacts.html" style="color: #9CA3AF; text-decoration: none;">Контакты</a></li>
+        </ul>
+      </div>
+
+      <!-- Блок 3: Контакты и партнёры -->
+      <div>
+        <h3 class="footer__title">КОНТАКТЫ</h3>
+        <p class="footer__text">+7 (812) 123-45-67</p>
+        <p class="footer__text">@pionerpalace</p>
+        <p class="footer__text">
+          <a href="mailto:info@pionerpalace.ru" style="color: #9CA3AF; text-decoration: none;">info@pionerpalace.ru</a>
+        </p>
+        <h3 class="footer__title" style="margin-top: 1rem;">ПАРТНЁРЫ</h3>
+        <p class="footer__text">Российское общество «Знание»<br>Союз юных инженеров</p>
+      </div>
+    </div>
+
+    <div class="footer__bottom">ДИЗАЙН ВДОХНОВЛЁН СОВЕТСКИМ ПЛАКАТОМ 1920–1930-Х ГОДОВ</div>
+  </div>
+</footer>
+</body>
+</html>
