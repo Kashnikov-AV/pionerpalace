@@ -55,8 +55,9 @@ PAGE_URL = '{slug}.html'
 MARKDOWN = {
     'extension_configs': {
         'markdown.extensions.codehilite': {'css_class': 'highlight'},
-        'markdown.extensions.extra': {},          # ← важно! включает списки, таблицы, сноски
-        'markdown.extensions.meta': {},           # ← важно! для чтения метаданных
+        'markdown.extensions.extra': {},          # ← важно для таблиц, списков, сносок
+        'markdown.extensions.meta': {},           # ← важно для чтения метаданных
+        'markdown.extensions.toc': {},            # ← для оглавления (опционально)
     },
     'output_format': 'html5',
 }
