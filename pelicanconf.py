@@ -3,7 +3,7 @@ SITENAME = 'Дворец пионеров'
 SITEURL = ""
 
 PATH = "content"
-STATIC_PATHS = ['static/css', 'static/fonts', 'static/images', 'static/gallery']
+STATIC_PATHS = ['static']
 THEME = 'themes/palace'
 
 
@@ -45,6 +45,18 @@ ARTICLE_LANG_SAVE_AS = 'courses/{slug}.html'
 # Указываем шаблон для статей (курсов)
 ARTICLE_TEMPLATE = 'course.html'
 
-# pelicanconf.py
+PAGE_PATHS = ['pages', 'magazines']
 PAGE_SAVE_AS = '{slug}.html'
 PAGE_URL = '{slug}.html'
+
+# pelicanconf.py
+
+# Включаем Markdown
+MARKDOWN = {
+    'extension_configs': {
+        'markdown.extensions.codehilite': {'css_class': 'highlight'},
+        'markdown.extensions.extra': {},          # ← важно! включает списки, таблицы, сноски
+        'markdown.extensions.meta': {},           # ← важно! для чтения метаданных
+    },
+    'output_format': 'html5',
+}
